@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Coi Box</title>
+
+<link rel="icon" type="image/png" href="images/logo.png">
+
+
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- SETUP -->
+<div id="setupArea">
+    <h2>Berape Orang nak maen box ni budak ? 🎮</h2>
+    <input type="number" id="jumlah" placeholder="Jumlah Pemain">
+    <br>
+    <button onclick="buatNama()">Input Nama</button>
+    <div id="namaContainer"></div>
+    <button id="btnMulai" onclick="mulaiGame()" disabled>Mulai</button>
+</div>
+
+
+<div id="scoreSection">
+    <h3>🏆 Scoreboard Remi Box 🏆</h3>
+    <button onclick="resetGame()">🔄 Reset</button>
+
+    <div class="score-wrapper">
+
+        <!-- TABLE -->
+        <div class="table-box">
+            <table id="scoreTable">
+                <thead>
+                    <tr><th>Rank</th><th>Nama</th><th>Skor</th></tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+
+        <!-- CHART -->
+        <div class="chart-box">
+            <canvas id="chartScore"></canvas>
+        </div>
+
+        <!-- FOTO -->
+        <div class="foto-box">
+            <div class="foto-item">
+                <img id="imgWinner" src="winner.png">
+                <span>🏆 Kepala Daun</span>
+            </div>
+
+            <div class="foto-item">
+                <img id="imgLoser" src="loser.png">
+                <span>💀 Tukang Kocok</span>
+            </div>
+        </div>
+
+    </div>
+
+    <h3 id="roundInfo">Round: 0</h3>
+</div>
+
+<h2 id="judulGame">🎴 Input Nilai Sisa Kartu Player 🎴</h2>
+
+<div style="margin-top:8px; padding:8px; background:#1f2a38; border-left:4px solid #ffd700;">
+    ℹ️ Cakte = <span style="color:red;">0</span> |
+    Joker1 = <span style="color:red;">00</span> |
+    Joker2 = <span style="color:red;">000</span> |
+    Joker3 = <span style="color:red;">0000</span>
+</div>
+
+<div id="gameArea" class="game-box"></div>
+
+<!-- HISTORY -->
+<div id="historySection">
+    <h3>📜 History</h3>
+    <div class="history">
+        <table id="historyTable">
+            <thead>
+                <tr><th>Round</th><th>Detail</th><th>Aksi</th></tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+</div>
+
+</div>
+
+
+<!-- 🔥 CHART.JS WAJIB DI ATAS -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
